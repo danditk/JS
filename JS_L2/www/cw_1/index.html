@@ -16,7 +16,7 @@
 			var liczba = document.getElementById('pole').value;
 			if (liczba>0) document.getElementById("wynik").innerHTML="Dodatnia";
 			else if (liczba<0) document.getElementById("wynik").innerHTML="Ujemna";
-			else if (liczba=0) document.getElementById("wynik").innerHTML="Zero";
+			else if (liczba=="0") document.getElementById("wynik").innerHTML="Zero";
 			else document.getElementById("wynik").innerHTML="Error";
 		}
 	</script>
@@ -25,12 +25,10 @@
 
 <body style="background-color: gray;">
 
-	<form>
 		<input id="pole" type="text">
 		<input type="submit" value="Sprawdź" onclick="sprawdz()">
 
 		<div id="wynik"></div>
-	</form>
 
 </body>
 
