@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+
+<html lang="pl">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>Tytył</title>
+	<meta name="autor" content="lesserr" />
+	<meta name="description" content="Opis witryny" />
+	<meta name="keywords" content="słowa kluczowe" />
+	<link rel="stylesheet" href="style.css" type="text/css">
+
+	<script type="text/javascript">
+		function sprawdz(){
+			var liczba = document.getElementById('pole').value;
+			if (liczba>0) document.getElementById("wynik").innerHTML="Dodatnia";
+			else if (liczba<0) document.getElementById("wynik").innerHTML="Ujemna";
+			else if (liczba=0) document.getElementById("wynik").innerHTML="Zero";
+			else document.getElementById("wynik").innerHTML="Error";
+		}
+	</script>
+
+</head>
+
+<body style="background-color: gray;">
+
+	<form>
+		<input id="pole" type="text">
+		<input type="submit" value="Sprawdź" onclick="sprawdz()">
+
+		<div id="wynik"></div>
+	</form>
+
+</body>
+
+</html>
