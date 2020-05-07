@@ -14,16 +14,39 @@
 	<style>
 		body{
 			 background-color: #222;
-			 font-size: 24px;
+			 font-size: 34px;
 			 color: white;
+		}
+		#slider{
+			width: 500px;
+			height: 300px;
 		}
 	</style>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 	<script type="text/javascript">
 
 		var numer = Math.floor(Math.random()*12)+1;
+
+		var timer1 = 0;
+		var timer2 = 0;
+
+		function ustawslajd(nrslajdu){
+
+			clearTimeout(timer1);
+			clearTimeout(timer2);
+			numer = nrslajdu-1;
+
+			znikanie();
+			setTimeout("zmienslajd()", 500);
+		}
+
+		function znikanie(){
+
+			$("#slider").fadeOut(500);
+
+		}
 
 		function zmienslajd(){
 
@@ -32,8 +55,10 @@
 			var plik = "<img src=\"img/slajd" + numer + ".jpg\" />";
 
 			document.getElementById("slider").innerHTML = plik;
+			$("#slider").fadeIn(500);
 
-			setTimeout("zmienslajd()", 2000);
+			timer1 = setTimeout("zmienslajd()", 2000);
+			timer2 = setTimeout("znikanie()", 1500);
 
 		}
 	</script>
@@ -42,7 +67,19 @@
 
 <body onload="zmienslajd()">
 
-		<div id="slider" style="width: 500px; height: 300px;"></div>
+		<span onclick="ustawslajd(1)" style="cursor: pointer;">[1]</span>
+		<span onclick="ustawslajd(2)" style="cursor: pointer;">[2]</span>
+		<span onclick="ustawslajd(3)" style="cursor: pointer;">[3]</span>
+		<span onclick="ustawslajd(4)" style="cursor: pointer;">[4]</span>
+		<span onclick="ustawslajd(5)" style="cursor: pointer;">[5]</span>
+		<span onclick="ustawslajd(6)" style="cursor: pointer;">[6]</span>
+		<span onclick="ustawslajd(7)" style="cursor: pointer;">[7]</span>
+		<span onclick="ustawslajd(8)" style="cursor: pointer;">[8]</span>
+		<span onclick="ustawslajd(9)" style="cursor: pointer;">[9]</span>
+		<span onclick="ustawslajd(10)" style="cursor: pointer;">[10]</span>
+		<span onclick="ustawslajd(11)" style="cursor: pointer;">[12]</span>
+		<span onclick="ustawslajd(12)" style="cursor: pointer;">[12]</span>
+		<div id="slider"></div>
 
 </body>
 
