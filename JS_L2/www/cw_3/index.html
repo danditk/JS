@@ -19,9 +19,21 @@
 		}
 	</style>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 	<script type="text/javascript">
-	
+
+		var numer = Math.floor(Math.random()*12)+1;
+
 		function zmienslajd(){
+
+			numer++; if(numer>12) numer=1;
+
+			var plik = "<img src=\"img/slajd" + numer + ".jpg\" />";
+
+			document.getElementById("slider").innerHTML = plik;
+
+			setTimeout("zmienslajd()", 2000);
 
 		}
 	</script>
@@ -30,7 +42,7 @@
 
 <body onload="zmienslajd()">
 
-		<div id="slider"></div>
+		<div id="slider" style="width: 500px; height: 300px;"></div>
 
 </body>
 
