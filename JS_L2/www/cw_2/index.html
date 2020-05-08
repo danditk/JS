@@ -18,18 +18,31 @@
 			var wartosc = "";
 
 			if (isNaN(liczba1) || isNaN(liczba2)) {
-				document.getElementById("wynik").innerHTML="!!!!Error";
+				if (isNaN(liczba1) && isNaN(liczba2)) {
+					document.getElementById("wynik").innerHTML="Liczby polach są nieprawiadłowe";
+				}
+				else if (isNaN(liczba1) && !isNaN(liczba2)){
+					document.getElementById("wynik").innerHTML="Liczba w lewym polu jest nieprawidłowa";
+				}
+				else{
+					document.getElementById("wynik").innerHTML="Liczba w prawym polu jest nieprawidłowa";
+				}
 			}
-			else if (liczba2 >= liczba1){
+
+			else if (liczba2 > liczba1){
 				for (i=liczba1; i<=liczba2; i++){
 					var wartosc =  wartosc + i + " ";
 				}
 				document.getElementById("wynik").innerHTML = wartosc;
-			} else if (liczba1 >= liczba2){
-				for (i=liczba2; i<=liczba1; i++){
+
+			} else if (liczba1 > liczba2){
+				for (i=liczba1; i>=liczba2; i--){
 					var wartosc =  wartosc + i + " ";
 				}
 				document.getElementById("wynik").innerHTML = wartosc;
+
+			} else if (liczba1 == liczba2){
+				document.getElementById("wynik").innerHTML = "Podane liczby są takie same";
 			}	else document.getElementById("wynik").innerHTML="Error";
 		}
 
